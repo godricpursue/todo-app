@@ -24,10 +24,6 @@ function App() {
     setCompletedList(completedItems);
   }, [list, toggleAll]);
 
-  useEffect(() => {
-    console.log(list);
-  }, [list]);
-
   return (
     <div className="App">
       <section className="todoapp">

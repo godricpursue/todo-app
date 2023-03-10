@@ -13,33 +13,18 @@ function Footer(props) {
     props.setActiveButton(false);
     props.setAllButton(true);
     props.setCompletedButton(false);
-    console.log(
-      "all:" + props.allButton,
-      "active:" + props.activeButton,
-      "completed:" + props.completedButton
-    );
   };
 
   const completedButtonFunc = () => {
     props.setActiveButton(false);
     props.setAllButton(false);
     props.setCompletedButton(true);
-    console.log(
-      "all:" + props.allButton,
-      "active:" + props.activeButton,
-      "completed:" + props.completedButton
-    );
   };
 
   const activeButtonFunc = () => {
     props.setActiveButton(true);
     props.setAllButton(false);
     props.setCompletedButton(false);
-    console.log(
-      "all:" + props.allButton,
-      "active:" + props.activeButton,
-      "completed:" + props.completedButton
-    );
   };
 
   useEffect(() => {
