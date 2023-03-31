@@ -1,7 +1,6 @@
 import React from "react";
 import AllSelected from "./ListFilter/AllSelected";
 
-
 function List(props) {
   const toggleAllFunction = () => {
     props.setToggleAll((prev) => !prev);
@@ -42,6 +41,7 @@ function List(props) {
           handleItemChange={handleItemChange}
           list={props.list}
           removeItem={removeItem}
+          updateItem={props.updateItem}
         />
       ) : null}
       {props.activeButton ? (
@@ -49,6 +49,7 @@ function List(props) {
           handleItemChange={handleItemChange}
           list={props.activeList}
           removeItem={removeItem}
+          updateItem={props.updateItem}
         />
       ) : null}
       {props.completedButton ? (
@@ -56,6 +57,7 @@ function List(props) {
           handleItemChange={handleItemChange}
           list={props.completedList}
           removeItem={removeItem}
+          updateItem={props.updateItem}
         />
       ) : null}
     </section>

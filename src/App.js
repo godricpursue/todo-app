@@ -17,6 +17,12 @@ function App() {
     { id: "cc", item: "Have a life!", done: false },
   ]);
 
+  function updateItem(updatedItem) {
+    setList(
+      list.map((item) => (item.id === updatedItem.id ? updatedItem : item))
+    );
+  }
+
   useEffect(() => {
     let activeItems = list.filter((item) => item.done === false);
     setActiveList(activeItems);
@@ -29,6 +35,7 @@ function App() {
       <section className="todoapp">
         <Heading setList={setList} list={list} />
         <List
+          updateItem={updateItem}
           setList={setList}
           list={list}
           setToggleAll={setToggleAll}
