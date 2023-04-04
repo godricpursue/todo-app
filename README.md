@@ -5,6 +5,7 @@ This is a simple web application built with ReactJS that allows users to create 
 ## Features
 
 - Add new task to the list
+- Edit any task
 - Mark a task as completed
 - Delete a task from the list
 - Filter tasks based on their status: all, active, or completed
@@ -35,3 +36,13 @@ After installing the dependencies, start the application by running the followin
 `npm start`
 
 The application will start running on http://localhost:3000.
+
+## ![landing](live/landing.png)
+
+## ![task-done](live/taskDone.png)
+
+## ![active-list](live/activeList.png)
+
+## ![completed-list](live/completedList.png)
+
+## ![edit-item](live/editItem.png)

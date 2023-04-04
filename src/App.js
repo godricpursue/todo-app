@@ -5,6 +5,7 @@ import List from "./Components/List";
 import Footer from "./Components/Footer";
 
 function App() {
+  // Defining state variables
   const [allButton, setAllButton] = useState(true);
   const [activeButton, setActiveButton] = useState(false);
   const [completedButton, setCompletedButton] = useState(false);
@@ -17,12 +18,14 @@ function App() {
     { id: "cc", item: "Have a life!", done: false },
   ]);
 
+  // Function to update an item in the to-do list
   function updateItem(updatedItem) {
     setList(
       list.map((item) => (item.id === updatedItem.id ? updatedItem : item))
     );
   }
 
+  // useEffect hook to update activeList and completedList state variables
   useEffect(() => {
     let activeItems = list.filter((item) => item.done === false);
     setActiveList(activeItems);

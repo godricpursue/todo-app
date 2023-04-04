@@ -1,14 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
 function Footer(props) {
+  // State to keep track of number of items left
   const [itemsLeft, setItemsLeft] = useState([]);
 
+  // Function to clear all completed items
   const completedAll = () => {
     let filteredAll = props.list.filter((item) => item.done === false);
     props.setList(filteredAll);
   };
 
+  // Functions to handle button clicks to filter the list
   const allButtonFunc = () => {
     props.setActiveButton(false);
     props.setAllButton(true);
@@ -27,6 +29,7 @@ function Footer(props) {
     props.setCompletedButton(false);
   };
 
+  // Use effect to update items left whenever the list or toggleAll state changes
   useEffect(() => {
     setItemsLeft(props.list.filter((item) => item.done === false));
   }, [props.list, props.toggleAll]);
