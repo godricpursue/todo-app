@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 
 function App() {
   // Defining state variables
+  const [localCheck, setLocalCheck] = useState(0);
   const [allButton, setAllButton] = useState(true);
   const [activeButton, setActiveButton] = useState(false);
   const [completedButton, setCompletedButton] = useState(false);
@@ -23,7 +24,21 @@ function App() {
     setList(
       list.map((item) => (item.id === updatedItem.id ? updatedItem : item))
     );
+    localStorage.setItem("localList", JSON.stringify([...list]));
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("localList")) {
+      const storedList = JSON.parse(localStorage.getItem("localList"));
+      setList(storedList);
+      setLocalCheck(1);
+    }
+  }, []);
+  useEffect(() => {
+    if (localStorage.getItem("localList") && localCheck === 1) {
+      localStorage.setItem("localList", JSON.stringify(list));
+    }
+  }, [list, localCheck]);
 
   // useEffect hook to update activeList and completedList state variables
   useEffect(() => {
@@ -32,6 +47,10 @@ function App() {
     let completedItems = list.filter((item) => item.done === true);
     setCompletedList(completedItems);
   }, [list, toggleAll]);
+
+  /*   useEffect(() => {
+    
+  }, [list]); */
 
   return (
     <div className="App">
