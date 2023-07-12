@@ -2,6 +2,9 @@
 
 This is a simple web application built with ReactJS that allows users to create and manage their to-do list. The application allows users to mark a task as completed, delete a task, and filter tasks based on their status.
 
+## Try it out!
+https://godricpursue.github.io/todo-app/
+
 ## Features
 
 - Add new task to the list
