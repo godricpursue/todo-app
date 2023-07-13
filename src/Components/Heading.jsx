@@ -13,6 +13,7 @@ function Heading(props) {
       done: false,
     };
     props.setList([...props.list, newItem]);
+    localStorage.setItem("localList", JSON.stringify([...props.list, newItem]));
     setInput(""); // Clear input box after adding a new item
   };
 

@@ -33,6 +33,7 @@ function List(props) {
   const removeItem = (id) => {
     const removedList = props.list.filter((query) => query.id !== id);
     props.setList(removedList);
+    localStorage.setItem("localList", JSON.stringify(removedList));
   };
 
   return (
